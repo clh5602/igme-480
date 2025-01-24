@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cursed Rat
+* source:	https://sketchfab.com/3d-models/cursed-rat-68b91d6bdebe4558807dfb052d9f41c9
+* author:	LittleWhiteElk (https://sketchfab.com/LittleWhiteElk)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cursed Rat" (https://sketchfab.com/3d-models/cursed-rat-68b91d6bdebe4558807dfb052d9f41c9) by LittleWhiteElk (https://sketchfab.com/LittleWhiteElk) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
