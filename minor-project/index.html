@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IGME-480 Minor Project</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script type='text/javascript'
+        src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/three.js/build/ar-threex-location-only.js'></script>
+    <script type='text/javascript'
+        src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js'></script>
+    <script>
+        AFRAME.registerComponent('clicker', {
+            init: function () {
+                this.el.addEventListener('click', e => {
+                    // Animate the ball to move up and forward over the net
+                    this.el.setAttribute('animation__move1', {
+                        property: 'position',
+                        to: '-1 3 -5',
+                        dur: 1000,
+                        easing: 'easeOutQuad'
+                    });
+
+                    // Animate the ball to rotate about its X-axis
+                    this.el.setAttribute('animation__rotateX', {
+                        property: 'rotation',
+                        to: '-360 0 0',
+                        dur: 3000,
+                        easing: 'linear',
+                        loop: true
+                    });
+
+                    // Animate the ball to move down and forward to the other side of the net
+                    setTimeout(() => {
+                        this.el.setAttribute('animation__move2', {
+                            property: 'position',
+                            to: '-2 1 -10',
+                            dur: 1000,
+                            easing: 'easeInQuad'
+                        });
+                    }, 1000);
+
+                    // Animate the ball to move up again in another parabolic path
+                    setTimeout(() => {
+                        this.el.setAttribute('animation__move3', {
+                            property: 'position',
+                            to: '0 3 -9',
+                            dur: 1000,
+                            easing: 'easeOutQuad'
+                        });
+                    }, 2000);
+
+                    // Animate the ball to move up again in another parabolic path
+                    setTimeout(() => {
+                        this.el.setAttribute('animation__move4', {
+                            property: 'position',
+                            to: '2 0.5 -8',
+                            dur: 1000,
+                            easing: 'easeInQuad'
+                        });
+                    }, 3000);
+
+                    // Animate the ball to move up again in another parabolic path
+                    setTimeout(() => {
+                        this.el.setAttribute('animation__move5', {
+                            property: 'position',
+                            to: '1 3 -5',
+                            dur: 1000,
+                            easing: 'easeOutQuad'
+                        });
+                    }, 4000);
+
+                    // Animate the ball to move back to its original position
+                    setTimeout(() => {
+                        this.el.setAttribute('animation__move6', {
+                            property: 'position',
+                            to: '0 1 -1',
+                            dur: 1000,
+                            easing: 'easeInOutQuad'
+                        });
+                    }, 5000);
+
+                    // Remove the animation attributes after the animations complete
+                    setTimeout(() => {
+                        this.el.removeAttribute('animation__move1');
+                        this.el.removeAttribute('animation__move2');
+                        this.el.removeAttribute('animation__move3');
+                        this.el.removeAttribute('animation__move4');
+                        this.el.removeAttribute('animation__move5');
+                        this.el.removeAttribute('animation__move6');
+                    }, 6000);
+                });
+            }
+        });
+    </script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs vr-mode-ui="enabled: false" raycaster cursor="rayOrigin: mouse"
+        renderer="antialias: true; alpha: true">
+
+        <a-camera></a-camera>
+
+        <!-- Volley Ball -->
+        <a-entity id="volley-ball" position="0 1 -1" scale="1 1 1" rotation="0 0 0"
+            gltf-model="./models/volley-ball/scene.gltf"
+            animation__rotate="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear" clicker></a-entity>
+
+        <!-- Net -->
+        <a-entity id="volley-ball-net" position="0 0 -5" scale="1 1 1" rotation="0 0 0"
+            gltf-model="./models/volley-ball-net/scene.gltf"></a-entity>
+
+    </a-scene>
+</body>
+
+</html>
